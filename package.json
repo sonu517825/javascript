@@ -4,12 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "console":"nodemon console/console"
+    "console": "nodemon console/console",
+    "loop": "nodemon loop/loop",
+    "array": "nodemon array/array"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "nodemon": "^2.0.20"
+  },
+  "imp": {
+    "1": "https://dev.to/dunggramer/disable-inspect-element-devtools-in-your-website-4b2k",
+    "2": "https://stackoverflow.com/questions/28690564/is-it-possible-to-remove-inspect-element",
+    "3": "https://www.codingtag.com/how-to-disable-inspect-element",
+    "4": "https://www.linkedin.com/pulse/disabling-inspect-element-good-bad-practice-aarushi-jain"
   }
 }

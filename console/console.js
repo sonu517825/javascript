@@ -68,7 +68,7 @@ console.clear();
 
 /*
 
-console.time() and console.timeEnd()
+console.time() and console.timeEnd() and console.timeLog()
 
 Whenever we want to know the amount of time spend by a block or a function, we can make use of the time() and timeEnd() methods provided by the JavaScript console object. They take a label which must be same, and the code inside can be anything( function, object, simple console). 
 
@@ -96,7 +96,11 @@ console.warn(undefined);
 console.warn([1, 2, 3, 4]);
 console.warn({ a: 1, b: 2, c: 3 });
 
-console.timeEnd('time');
+//console.timeEnd('time');
+
+//  OR 
+
+console.timeLog('time');  // for same lable
 
 
 /*
@@ -130,9 +134,12 @@ for (let i = 0; i < 5; i++) {
 }
 
 
+
 /*
 
-console.group() and console.groupEnd()
+// Grouping Methods 
+
+console.group() and console.groupEnd() and console.groupCollapsed()
 
 group() and groupEnd() methods of the console object allows us to group contents in a separate block, which will be indented. Just like the time() and the timeEnd() they also accepts label, again of same value.
 
@@ -162,6 +169,42 @@ group
 out of group
 
 */
+
+console.group('Different types of programming languages'); // Group Method with parameter             
+
+console.log('JavaScript');
+console.log('Java');
+console.log('Python');
+console.log('C');
+console.log('C++');
+console.groupEnd(); // GroupEnd Method                                                        
+
+console.groupCollapsed("collaps"); // GroupCollapsed Method without parameter    
+
+console.group('Web development skills'); // Group Method with parameter 
+console.log('HTML');
+console.log('CSS');
+console.log('JavaScript');
+console.groupEnd(); // GropEnd Method  
+
+console.log('out of group');
+
+/*
+
+
+Different types of programming languages
+  JavaScript
+  Java
+  Python
+  C
+  C++
+  Web development skills    // GroupCollapsed here
+    HTML
+    CSS
+    JavaScript
+
+
+ */
 
 
 
@@ -234,25 +277,82 @@ Assertion failed: undefined
 
 */
 
-// https://medium.com/theleanprogrammer/javascript-explore-different-types-of-console-methods-73c09e526d58
 
+/*
 
+console.trace() method
 
-function firstFunctioni() {
-    function secondFunctionu() {
-        console.log("called")
-    }
-    secondFunctionu();
+The console.trace() method tracks the execution of the code from starting point to the endpoint and how the code ended at a certain point.
+
+With console.trace, we can print the stack trace of all function call to reach the console.trace statement. The stack trace will be printed in the console.
+
+Use case of console.trace
+We can use console.trace in situations where we need to find out how a particular function is being executed.
+
+Sometimes we bind the same method to a different event listener on that case. We can use this while debugging.
+
+*/
+
+function first(val) {
+    second(val);
 }
 
-firstFunctioni();
-
-function firstFunction() {
-    function secondFunction() {
-        console.log("trace called")
-        console.trace();
-    }
-    secondFunction();
+function second(val) {
+    console.trace("This value in variable val is ", val);
+    return val;
 }
 
-firstFunction();
+function main(val) {
+    first(val);
+}
+
+main(3);
+main({ name: "Educative" });
+
+// main — first — second
+
+
+/*
+
+console.debug();
+
+console.log Black color text with no icon
+
+console.info Blue color text with icon
+
+console.debug Pure black color text
+
+console.warn Yellow color text with icon
+
+console.error Red Color text with icon
+
+*/
+
+
+console.debug("Console.debug");
+
+
+/*
+
+console.dir()
+
+
+console.log(input): The browser logs in a nicely formatted manner
+
+console.dir(input): The browser logs just the object with all its properties
+
+*/
+
+console.dir([1, 2, 3])
+
+
+/*
+
+console.dirxml() 
+
+same as 
+
+*/
+
+console.dirxml([1, 2, 3])
+
